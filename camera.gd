@@ -1,7 +1,7 @@
 extends Camera2D
 
 @export var target: Node2D
-@export var floor: Node2D
+@export var floor_node: Node2D
 const BOX = Vector2(25, 25)
 const SMOOTH = 5
 const MOVING = true
@@ -17,8 +17,8 @@ func _process(delta: float) -> void:
 		box_point = real_pos + t * relative
 		real_pos += (target.global_position - box_point) * SMOOTH * delta
 		global_position = real_pos
-		if global_position.y > floor.global_position.y - PAD:
-			global_position.y = floor.global_position.y - PAD
+		if global_position.y > floor_node.global_position.y - PAD:
+			global_position.y = floor_node.global_position.y - PAD
 		queue_redraw()
 	else:
 		box_point = Vector2.ZERO
