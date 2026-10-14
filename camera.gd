@@ -5,7 +5,7 @@ extends Camera2D
 const BOX = Vector2(25, 25)
 const SMOOTH = 5
 const MOVING = true
-const PAD = 500
+const PAD = 300
 var box_point: Vector2
 var real_pos: Vector2
 
