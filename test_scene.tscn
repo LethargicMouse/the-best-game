@@ -11,6 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://begkdyjh5pi0x" path="res://player_idle_3.png" id="7_4gito"]
 [ext_resource type="Texture2D" uid="uid://irt51ci7qiqx" path="res://player_idle_4.png" id="8_fbuy2"]
 [ext_resource type="Texture2D" uid="uid://bjorukmql5mt" path="res://player_idle_5.png" id="9_0k8yu"]
+[ext_resource type="Texture2D" uid="uid://dd7sseqo24i2d" path="res://player_run_1.png" id="10_hiucn"]
+[ext_resource type="Texture2D" uid="uid://bljie5avy46i4" path="res://player_run_2.png" id="11_k6its"]
+[ext_resource type="Texture2D" uid="uid://b15elicr6gjnb" path="res://player_run_3.png" id="12_2dw41"]
+[ext_resource type="Texture2D" uid="uid://bx8qcqrnyfeb0" path="res://player_run_4.png" id="13_ykxp3"]
+[ext_resource type="Texture2D" uid="uid://bp3jucj6xgu2f" path="res://player_run_5.png" id="14_g6y4b"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bqur2"]
 
@@ -38,6 +43,26 @@ animations = [{
 "loop": 2,
 "name": &"idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_hiucn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k6its")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2dw41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ykxp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_g6y4b")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 12.0
 }]
 
 [node name="TestScene" type="Node2D" unique_id=187131256]

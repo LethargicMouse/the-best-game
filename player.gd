@@ -2,13 +2,10 @@ extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -1000.0
+const SPEED = 1200.0
+const JUMP_VELOCITY = -1200.0
 var timer = 0
 var timer_2 = 0
-
-func _ready() -> void:
-	anim.play("idle")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -33,6 +30,11 @@ func _physics_process(delta: float) -> void:
 
 	if direction != 0.0:
 		anim.flip_h = direction < 0.0
+
+	if velocity.x != 0:
+		anim.play("run")
+	else:
+		anim.play("idle")
 
 	move_and_slide()
 
