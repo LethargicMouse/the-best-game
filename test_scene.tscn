@@ -3,57 +3,41 @@
 [ext_resource type="Script" uid="uid://c8me3yycguhni" path="res://player.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://c4p00xepbgwd8" path="res://player_visual.gd" id="2_ia1lp"]
 [ext_resource type="Texture2D" uid="uid://3jghxwyjnxa6" path="res://floor.png" id="3_7cbxl"]
-[ext_resource type="Texture2D" uid="uid://cj7j3hgefq1fh" path="res://anim_idle.png" id="3_8pr8v"]
 [ext_resource type="Script" uid="uid://c313ocgma5e6r" path="res://camera.gd" id="3_sasra"]
 [ext_resource type="Texture2D" uid="uid://c8xqp5io18bvv" path="res://bg.png" id="5_8pr8v"]
+[ext_resource type="Texture2D" uid="uid://b1nayvesux062" path="res://player_idle_1.png" id="5_rpuu0"]
 [ext_resource type="Texture2D" uid="uid://clnoo74obwcou" path="res://fg.png" id="6_buypi"]
+[ext_resource type="Texture2D" uid="uid://b07faab7kex6b" path="res://player_idle_2.png" id="6_oo8pe"]
+[ext_resource type="Texture2D" uid="uid://begkdyjh5pi0x" path="res://player_idle_3.png" id="7_4gito"]
+[ext_resource type="Texture2D" uid="uid://irt51ci7qiqx" path="res://player_idle_4.png" id="8_fbuy2"]
+[ext_resource type="Texture2D" uid="uid://bjorukmql5mt" path="res://player_idle_5.png" id="9_0k8yu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bqur2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pr8v"]
 size = Vector2(15.299999, 17.649998)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8pr8v"]
-atlas = ExtResource("3_8pr8v")
-region = Rect2(0, 0, 640, 640)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_buypi"]
-atlas = ExtResource("3_8pr8v")
-region = Rect2(640, 0, 640, 640)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_njel3"]
-atlas = ExtResource("3_8pr8v")
-region = Rect2(1280, 0, 640, 640)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vr1i5"]
-atlas = ExtResource("3_8pr8v")
-region = Rect2(1920, 0, 640, 640)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rpuu0"]
-atlas = ExtResource("3_8pr8v")
-region = Rect2(2560, 0, 640, 640)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_4yneb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8pr8v")
+"texture": ExtResource("5_rpuu0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_buypi")
+"texture": ExtResource("6_oo8pe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_njel3")
+"texture": ExtResource("7_4gito")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vr1i5")
+"texture": ExtResource("8_fbuy2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rpuu0")
+"texture": ExtResource("9_0k8yu")
 }],
 "loop": 2,
 "name": &"idle",
-"speed": 6.0
+"speed": 4.0
 }]
 
 [node name="TestScene" type="Node2D" unique_id=187131256]
