@@ -11,13 +11,13 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("jump"):
 		timer_2 = 0
 	if is_on_floor():
 		timer = 0
 		if timer_2 <= 0.2:
 			velocity.y = JUMP_VELOCITY
-	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
+	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.35
 	timer += delta
 	timer_2 += delta

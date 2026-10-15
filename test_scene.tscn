@@ -107,8 +107,6 @@ animations = [{
 [node name="ParallaxBG" type="Parallax2D" parent="." unique_id=1217386204]
 show_behind_parent = true
 scroll_scale = Vector2(0.5, 0.5)
-repeat_size = Vector2(3840, 1800)
-repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBG" unique_id=496426996]
 texture = ExtResource("5_8pr8v")
