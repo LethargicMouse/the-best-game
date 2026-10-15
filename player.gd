@@ -31,18 +31,18 @@ func _physics_process(delta: float) -> void:
 	if direction != 0.0:
 		anim.flip_h = direction < 0.0
 
-	if velocity.x != 0:
-		anim.play("run")
+	if not is_on_floor():
+		if velocity.y < 0.0:
+			set_anim("jump")
+		else:
+			set_anim("fall")
+	elif velocity.x != 0:
+		set_anim("run")
 	else:
-		anim.play("idle")
+		set_anim("idle")
 
 	move_and_slide()
 
-	#if not is_on_floor():
-		#if velocity.y < 0.0:
-			#anim.play("jump")
-		#else:
-			#anim.play("fall")
-	#elif abs(velocity.x) > 10.0:
-		#anim.play("run")
-	#else:
+func set_anim(new_anim):
+	if anim.animation != new_anim:
+		anim.play(new_anim)

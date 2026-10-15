@@ -3,18 +3,25 @@
 [ext_resource type="Script" uid="uid://c8me3yycguhni" path="res://player.gd" id="1_uhqqe"]
 [ext_resource type="Texture2D" uid="uid://3jghxwyjnxa6" path="res://floor.png" id="3_7cbxl"]
 [ext_resource type="Script" uid="uid://c313ocgma5e6r" path="res://camera.gd" id="3_sasra"]
+[ext_resource type="Texture2D" uid="uid://bhdpujofws7sh" path="res://player/anims/fall/1.png" id="4_6h1ut"]
+[ext_resource type="Texture2D" uid="uid://fqx6hyuu5toh" path="res://player/anims/fall/2.png" id="5_6m80x"]
 [ext_resource type="Texture2D" uid="uid://c8xqp5io18bvv" path="res://bg.png" id="5_8pr8v"]
 [ext_resource type="Texture2D" uid="uid://b1nayvesux062" path="res://player/anims/idle/1.png" id="5_rpuu0"]
 [ext_resource type="Texture2D" uid="uid://clnoo74obwcou" path="res://fg.png" id="6_buypi"]
+[ext_resource type="Texture2D" uid="uid://bt5rb1ub1xt4j" path="res://player/anims/fall/3.png" id="6_cqn77"]
 [ext_resource type="Texture2D" uid="uid://b07faab7kex6b" path="res://player/anims/idle/2.png" id="6_oo8pe"]
 [ext_resource type="Texture2D" uid="uid://begkdyjh5pi0x" path="res://player/anims/idle/3.png" id="7_4gito"]
+[ext_resource type="Texture2D" uid="uid://xo1wgys3d3e7" path="res://player/anims/fall/4.png" id="7_22oil"]
 [ext_resource type="Texture2D" uid="uid://irt51ci7qiqx" path="res://player/anims/idle/4.png" id="8_fbuy2"]
 [ext_resource type="Texture2D" uid="uid://bjorukmql5mt" path="res://player/anims/idle/5.png" id="9_0k8yu"]
 [ext_resource type="Texture2D" uid="uid://dd7sseqo24i2d" path="res://player/anims/run/1.png" id="10_hiucn"]
 [ext_resource type="Texture2D" uid="uid://bljie5avy46i4" path="res://player/anims/run/2.png" id="11_k6its"]
 [ext_resource type="Texture2D" uid="uid://b15elicr6gjnb" path="res://player/anims/run/3.png" id="12_2dw41"]
+[ext_resource type="Texture2D" uid="uid://coux5p5qw6cm3" path="res://player/anims/jump/1.png" id="13_p7tmn"]
 [ext_resource type="Texture2D" uid="uid://bx8qcqrnyfeb0" path="res://player/anims/run/4.png" id="13_ykxp3"]
+[ext_resource type="Texture2D" uid="uid://ceowxt4k0wbsd" path="res://player/anims/jump/2.png" id="14_b11sm"]
 [ext_resource type="Texture2D" uid="uid://bp3jucj6xgu2f" path="res://player/anims/run/5.png" id="14_g6y4b"]
+[ext_resource type="Texture2D" uid="uid://d24rm2toi2ojk" path="res://player/anims/jump/3.png" id="15_mfkbt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bqur2"]
 
@@ -23,6 +30,23 @@ size = Vector2(15.299999, 17.649998)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4yneb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6h1ut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6m80x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cqn77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_22oil")
+}],
+"loop": 0,
+"name": &"fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_rpuu0")
@@ -42,6 +66,20 @@ animations = [{
 "loop": 2,
 "name": &"idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_p7tmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b11sm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_mfkbt")
+}],
+"loop": 0,
+"name": &"jump",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -88,7 +126,6 @@ texture = ExtResource("3_7cbxl")
 script = ExtResource("1_uhqqe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=487500204]
-top_level = true
 position = Vector2(-24.999996, 51.5)
 scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_8pr8v")
