@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 
+const ATTACK = preload("res://attack.tscn")
+
 const SPEED = 1200.0
 const JUMP_VELOCITY = -1200.0
 var timer = 0
 var timer_2 = 0
 var is_attacking = false
-
-func _ready() -> void:
-	anim.animation_finished.connect(_on_animation_finished)
+var facing = 1
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
+		facing = sign(direction)
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -43,7 +44,14 @@ func update_anim():
 		return
 	if Input.is_action_just_pressed("attack"):
 		is_attacking = true
-		set_anim("attack")
+		if velocity.x == 0 or not is_on_floor():
+			set_anim("attack")
+		await get_tree().create_timer(0.08).timeout
+		var effect = ATTACK.instantiate()
+		effect.position.y = 60
+		effect.scale.x = facing
+		effect.tree_exiting.connect(func(): is_attacking = false)
+		add_child(effect)
 	elif is_on_floor():
 		if velocity.x == 0:
 			set_anim("idle")
@@ -54,10 +62,6 @@ func update_anim():
 			set_anim("jump")
 		else:
 			set_anim("fall")
-
-func _on_animation_finished():
-	if anim.animation == "attack":
-		is_attacking = false
 
 func set_anim(new_anim):
 	if anim.animation != new_anim:

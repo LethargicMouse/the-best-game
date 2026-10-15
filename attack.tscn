@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c4ee4aadnmuq2"]
+
+[ext_resource type="Script" uid="uid://bedip84ecyr4e" path="res://attack.gd" id="1_0c0jm"]
+[ext_resource type="Texture2D" uid="uid://b3c21x5y1erst" path="res://attack-anim/1.png" id="1_7yfhp"]
+[ext_resource type="Texture2D" uid="uid://d3iklt2lrd3l0" path="res://attack-anim/2.png" id="2_0c0jm"]
+[ext_resource type="Texture2D" uid="uid://bho0ahtit4n70" path="res://attack-anim/3.png" id="3_3och2"]
+[ext_resource type="Texture2D" uid="uid://c3llfh8bo2b5l" path="res://attack-anim/4.png" id="4_jdck2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bqur2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7yfhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0c0jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3och2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jdck2")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="Attack" type="Node2D" unique_id=1314313930]
+script = ExtResource("1_0c0jm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1496649365]
+sprite_frames = SubResource("SpriteFrames_bqur2")
+frame = 1
