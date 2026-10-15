@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqnjssphde05u"]
 
-[ext_resource type="Script" uid="uid://c8me3yycguhni" path="res://player.gd" id="1_uhqqe"]
+[ext_resource type="Script" uid="uid://cgapi3jauhph3" path="res://test_scene.gd" id="1_cqn77"]
+[ext_resource type="Script" uid="uid://c8me3yycguhni" path="res://player/player.gd" id="1_uhqqe"]
 [ext_resource type="Texture2D" uid="uid://3jghxwyjnxa6" path="res://floor.png" id="3_7cbxl"]
 [ext_resource type="Script" uid="uid://c313ocgma5e6r" path="res://camera.gd" id="3_sasra"]
 [ext_resource type="Texture2D" uid="uid://bhdpujofws7sh" path="res://player/anims/fall/1.png" id="4_6h1ut"]
@@ -22,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ceowxt4k0wbsd" path="res://player/anims/jump/2.png" id="14_b11sm"]
 [ext_resource type="Texture2D" uid="uid://bp3jucj6xgu2f" path="res://player/anims/run/5.png" id="14_g6y4b"]
 [ext_resource type="Texture2D" uid="uid://d24rm2toi2ojk" path="res://player/anims/jump/3.png" id="15_mfkbt"]
+[ext_resource type="Script" uid="uid://dce5j2a6u4aj6" path="res://room.gd" id="22_6m80x"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bqur2"]
 
@@ -103,6 +105,7 @@ animations = [{
 }]
 
 [node name="TestScene" type="Node2D" unique_id=187131256]
+script = ExtResource("1_cqn77")
 
 [node name="ParallaxBG" type="Parallax2D" parent="." unique_id=1217386204]
 show_behind_parent = true
@@ -113,12 +116,12 @@ texture = ExtResource("5_8pr8v")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1236989933]
 
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=226000821]
+texture = ExtResource("3_7cbxl")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=2026110093]
 position = Vector2(0, 650)
 shape = SubResource("WorldBoundaryShape2D_bqur2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=226000821]
-texture = ExtResource("3_7cbxl")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=22837255]
 script = ExtResource("1_uhqqe")
@@ -138,6 +141,9 @@ scroll_scale = Vector2(1.4, 1.4)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxFG" unique_id=413682739]
 texture = ExtResource("6_buypi")
+
+[node name="Room" type="Node2D" parent="." unique_id=57067606]
+script = ExtResource("22_6m80x")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=190768400 node_paths=PackedStringArray("target", "floor_node")]
 script = ExtResource("3_sasra")
