@@ -7,12 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://bhdpujofws7sh" path="res://player/anims/fall/1.png" id="4_6h1ut"]
 [ext_resource type="Texture2D" uid="uid://fqx6hyuu5toh" path="res://player/anims/fall/2.png" id="5_6m80x"]
 [ext_resource type="Texture2D" uid="uid://c8xqp5io18bvv" path="res://bg.png" id="5_8pr8v"]
+[ext_resource type="Texture2D" uid="uid://b01faap8ejkte" path="res://player/anims/attack/1.png" id="5_b11sm"]
 [ext_resource type="Texture2D" uid="uid://b1nayvesux062" path="res://player/anims/idle/1.png" id="5_rpuu0"]
 [ext_resource type="Texture2D" uid="uid://clnoo74obwcou" path="res://fg.png" id="6_buypi"]
 [ext_resource type="Texture2D" uid="uid://bt5rb1ub1xt4j" path="res://player/anims/fall/3.png" id="6_cqn77"]
+[ext_resource type="Texture2D" uid="uid://i46jk3ub2jau" path="res://player/anims/attack/2.png" id="6_mfkbt"]
 [ext_resource type="Texture2D" uid="uid://b07faab7kex6b" path="res://player/anims/idle/2.png" id="6_oo8pe"]
 [ext_resource type="Texture2D" uid="uid://begkdyjh5pi0x" path="res://player/anims/idle/3.png" id="7_4gito"]
 [ext_resource type="Texture2D" uid="uid://xo1wgys3d3e7" path="res://player/anims/fall/4.png" id="7_22oil"]
+[ext_resource type="Texture2D" uid="uid://d2prer4cu4ia7" path="res://player/anims/attack/3.png" id="7_077gh"]
 [ext_resource type="Texture2D" uid="uid://irt51ci7qiqx" path="res://player/anims/idle/4.png" id="8_fbuy2"]
 [ext_resource type="Texture2D" uid="uid://bjorukmql5mt" path="res://player/anims/idle/5.png" id="9_0k8yu"]
 [ext_resource type="Texture2D" uid="uid://dd7sseqo24i2d" path="res://player/anims/run/1.png" id="10_hiucn"]
@@ -32,6 +35,20 @@ size = Vector2(15.299999, 17.649998)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4yneb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_b11sm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mfkbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_077gh")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_6h1ut")

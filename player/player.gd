@@ -6,6 +6,10 @@ const SPEED = 1200.0
 const JUMP_VELOCITY = -1200.0
 var timer = 0
 var timer_2 = 0
+var is_attacking = false
+
+func _ready() -> void:
+	anim.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -31,17 +35,29 @@ func _physics_process(delta: float) -> void:
 	if direction != 0.0:
 		anim.flip_h = direction < 0.0
 
-	if not is_on_floor():
-		if velocity.y < 0.0:
+	move_and_slide()
+	update_anim()
+
+func update_anim():
+	if is_attacking:
+		return
+	if Input.is_action_just_pressed("attack"):
+		is_attacking = true
+		set_anim("attack")
+	elif is_on_floor():
+		if velocity.x == 0:
+			set_anim("idle")
+		else:
+			set_anim("run")
+	else:
+		if velocity.y < 0:
 			set_anim("jump")
 		else:
 			set_anim("fall")
-	elif velocity.x != 0:
-		set_anim("run")
-	else:
-		set_anim("idle")
 
-	move_and_slide()
+func _on_animation_finished():
+	if anim.animation == "attack":
+		is_attacking = false
 
 func set_anim(new_anim):
 	if anim.animation != new_anim:
