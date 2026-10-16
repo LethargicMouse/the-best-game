@@ -163,6 +163,8 @@ texture = ExtResource("6_buypi")
 script = ExtResource("22_6m80x")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=190768400 node_paths=PackedStringArray("target", "floor_node")]
+offset = Vector2(0, -150)
+zoom = Vector2(0.5, 0.5)
 script = ExtResource("3_sasra")
 target = NodePath("../Player")
 floor_node = NodePath("../Floor/CollisionShape2D")
